@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript課題</title>
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- jQueryの素 -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+  <!-- 自作のJS -->
+  <script src="script.js" defer></script>
+
+
+
+    <!-- スワイパーの設定 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+</head>
+
+
+
+<body id="top">
+  <header>
+    <div class="wrapper">
+      <h1>JavaScript課題</h1>
+      <button class="menu-btn" id="menu-btn" type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav id="gnavi" class="gnavi">
+    <ul class="gnavi__list">
+      <li class="gnavi__item"><a href="#kadai01" class="gnavi__link">【課題01】今日は何曜日？</a></li>
+      <li class="gnavi__item"><a href="#kadai02" class="gnavi__link">【課題02】あなたのBMIは？</a></li>
+      <li class="gnavi__item"><a href="#kadai03" class="gnavi__link">【課題03】カルーセルスライドショーをつくってみよう</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="kadai01" class="wrapper">
+      <h2 class="sec-title">【課題01】今日は何曜日？</h2>
+      <form action="#" name="what-day" id="what-day">
+        <p>今日の日付を入力してください</p>
+        <dl>
+          <div class="flex">
+            <dt>西暦 4桁</dt>
+            <dd><input type="number" name="year" id="year" placeholder="例：2020"></dd>
+          </div>
+          <div class="flex">
+            <dt>月</dt>
+            <dd>
+              <select name="month" id="month">
+                <option value="" disabled selected>月を選んでください</option>
+                <option value="1">1月</option>
+                <option value="2">2月</option>
+                <option value="3">3月</option>
+                <option value="4">4月</option>
+                <option value="5">5月</option>
+                <option value="6">6月</option>
+                <option value="7">7月</option>
+                <option value="8">8月</option>
+                <option value="9">9月</option>
+                <option value="10">10月</option>
+                <option value="11">11月</option>
+                <option value="12">12月</option>
+              </select>
+            </dd>
+          </div>
+          <div class="flex">
+            <dt>日 2桁</dt>
+            <dd><input type="number" name="date" id="date" placeholder="例：05"></dd>
+          </div>
+        </dl>
+        <input type="submit" id="result-day" value="結果" class="btn">
+      </form>
+      <p class="sample">例：2020年6月15日は月曜日です</p>
+      <p>結果：<span id="A-01"></span>は<span id="A-02"></span>です</p>
+    </section>
+
+    <section id="kadai02" class="wrapper">
+      <h2 class="sec-title">【課題02】あなたのBMIは？</h2>
+      <form action="#" name="what-bmi" id="what-bmi">
+        <p>身長と体重を入力してください</p>
+        <p>計算式　体重(kg) / (身長(m) * 身長(m)) <br>
+          25以上 肥満気味・18.5～24 標準・18.5未満 痩せすぎ</p>
+        <dl>
+          <div class="flex">
+            <dt>身長 cm</dt>
+            <dd><input type="number" name="cm" id="cm" placeholder="例：160"></dd>
+          </div>
+          <div class="flex">
+            <dt>体重 kg</dt>
+            <dd><input type="number" name="kg" id="kg" placeholder="例：50"></dd>
+          </div>
+        </dl>
+        <input type="submit" id="result-bmi" value="結果" class="btn">
+      </form>
+      <p class="sample">例：あなたのBMIは19.5で標準です。</p>
+      <p>結果：あなたのBMIは<span id="A-03"></span>で<span id="A-04"></span>です</p>
+    </section>
+
+    <section id="kadai03" class="wrapper">
+      <h2 class="sec-title">タブをクリックして表示内容を切り替える</h2>
+
+      <ul class="tab-list">
+        <li class="tab-link open" data-tab="object">材料</li>
+        <li class="tab-link" data-tab="craft">作り方</li>
+        <li class="tab-link" data-tab="sample-image">見本写真</li>
+      </ul>
+
+      <div class="tab-sec__container">
+        <section id="object" class="object tab-sec open">
+          <h3>材料</h3>
+
+          <ul class="object__list">
+            <li class="object__item">蓋付きのボトル（形はお好みで）</li>
+            <li class="object__item">オイル（ミネラルオイルもしくはシリコンオイル）</li>
+            <li class="object__item">ハーバリウムにしたい花<br>（プリザーブドフラワーもしくはドライフラワー）</li>
+            <li class="object__item">割り箸もしくはピンセット</li>
+            <li class="object__item">ハサミ</li>
+            <li class="object__item">アルコールウェットティッシュ</li>
+            <li class="object__item">ティッシュペーパー</li>
+          </ul>
+        </section>
+
+        <section id="craft" class="craft tab-sec">
+          <h3>作り方</h3>
+
+          <ol class="craft__list">
+            <li class="craft__item">どんなハーバリウムが作りたいか考え、花やボトルを用意する。</li>
+            <li class="craft__item">用意したボトルを一度アルコールウェットティッシュで拭き、ティッシュペーパーで余計な水分を拭きとる。</li>
+            <li class="craft__item">用意した花を背の低い順からピンセットや割り箸でボトルへ入れていく。</li>
+            <li class="craft__item">花を入れ終わったらオイルをボトルへ入れる。<br>ボトルを斜めにしてゆっくりオイルを入れると花がつぶれにくい。</li>
+            <li class="craft__item">ボトルいっぱいにオイルを入れたら、空気を抜くため3〜5分置いておく。</li>
+            <li class="craft__item">空気が抜けたら蓋をして、完成！</li>
+          </ol>
+        </section>
+
+        <section id="sample-image" class="craft tab-sec">
+          <h3>見本写真</h3>
+
+          <img src="images/herbarium.png" alt="">
+        </section>
+      </div><!-- /.tab-sec__container -->
+
+    </section>
+
+    <section id="kadai04" class="wrapper">
+      <h2 class="sec-title">【課題04】カルーセルスライドショーをつくってみよう</h2>
+
+      <p>2秒ごとに並びが変わるように設定</p>
+
+      <div class="swiper">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide"><img src="images/img1.jpg" alt=""></li>
+          <li class="swiper-slide"><img src="images/img2.jpg" alt=""></li>
+          <li class="swiper-slide"><img src="images/img3.jpg" alt=""></li>
+          <li class="swiper-slide"><img src="images/img4.jpg" alt=""></li>
+          <li class="swiper-slide"><img src="images/img5.jpg" alt=""></li>
+
+        </ul>
+      </div><!-- swiper -->
+    </section>
+
+  </main>
+
+  <footer>
+    <small>&copy; 2020 動的サイトJavaScript課題</small>
+  </footer>
+
+  <a href="#top" class="top__link" id="page-top">page<br>top</a>
+
+  
+</body>
+
+</html>
