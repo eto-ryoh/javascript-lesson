@@ -249,10 +249,11 @@ dt {
 }
 
 .top__link {
-  display: none;
+  opacity: 0;
 }
 
 .top__link.open {
+  opacity: 1;
   display: flex;
   justify-content: center;
   align-items: center;
